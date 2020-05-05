@@ -13,7 +13,9 @@
   --shakespeare: #5398B7;
 }
 
-body {
+body, html, #root, .App{  
+  text-align: center;
+  height: 100%;
   margin: 0;
 }
 
