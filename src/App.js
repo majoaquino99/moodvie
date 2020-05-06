@@ -1,10 +1,17 @@
 import React from 'react';
-import Landing from './components/landing/LandingPage';
+import Landing from './views/LandingView';
+import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
+
+
 
 function App() {
   return (
     <div className="App">
-     <Landing/>
+      <Router>
+        <Switch>
+          <Route exact path = '/' component= {Landing} />      
+        </Switch>
+      </Router>
     </div>
   );
 }

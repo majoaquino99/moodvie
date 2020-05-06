@@ -1,0 +1,41 @@
+@media only screen and (max-width: 600px) {
+.moodContainer {
+    font-family: var(--font-poppins);
+    color: white;  
+}
+
+.emoji{
+    height:40px;
+    width: 40px;
+}
+.moodContainer label {
+    font-size: 14px;
+}
+.moodContainer legend{
+    font-weight: bold;
+    width: 200px;
+    padding: 6px;
+    margin-left: calc(50% - 100px - 2px);
+    margin-top: 18vw;
+    background-color: var(--light-grey);
+    border-style: double;
+    border-radius: 4%;
+    border-width: 6px;
+    color: #443D67;
+}
+.moodContainer fieldset {
+    display: block;
+    background-color: #E1998A;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 1em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 6px;
+    border-style: groove;
+    border-radius: 8%;
+}
+/* estilo de letras tamano de emojis */
+}
