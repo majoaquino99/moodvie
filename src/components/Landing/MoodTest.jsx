@@ -1,36 +1,36 @@
 import React from 'react';
-import lowmood from '../../assets/icons/lowmood.png';
+import stressed from '../../assets/icons/stressed.png';
 import chilling from '../../assets/icons/chilling.png';
 import bored from '../../assets/icons/bored.png';
 import insomnia from '../../assets/icons/insomnia.png';
-import sad from '../../assets/icons/sad.png';
+import lowmood from '../../assets/icons/lowmood.png';
 import IconButton from '../../../node_modules/@material-ui/core/IconButton';
 import styles from './MoodTest.module.css';
 
 
 const MoodTest = ({selectedAnswerOne}) => {
     return(
-        <div>
+        <div className = {styles.moodContainer}>
             <legend>How are you feeling?</legend> 
-            <fieldset className = {styles.moodContainer}>  
+            <fieldset>  
                       
                 <div>
-                    <label htmlFor = 'lowMood'>Low Mood</label>
+                    <label htmlFor = 'Stressed'>Stressed</label>
                     <IconButton
-                    name = 'lowMood'
-                    value = 'lowMood'
+                    name = 'Stressed'
+                    value = 'STRESSED'
                     onClick = {selectedAnswerOne}
                 > 
                         <img 
                             className = {styles.emoji}                        
-                        src = {lowmood}
-                        alt = 'Lowmood emoji'
+                        src = {stressed}
+                        alt = 'Stressed emoji'
                         /> 
                     </IconButton>
                     <label htmlFor = 'chilling'>Chilling</label>
                     <IconButton
                         name = 'chilling'
-                        value = 'chilling'
+                        value = 'JUST_CHILLING'
                         onClick = {selectedAnswerOne}
                         >
                         <img 
@@ -44,7 +44,7 @@ const MoodTest = ({selectedAnswerOne}) => {
                     <label htmlFor = 'bored'>Bored</label>
                     <IconButton
                     name = 'bored'
-                    value = 'bored'
+                    value = 'BOREDOM'
                     onClick = {selectedAnswerOne}>                   
                         <img 
                             className = {styles.emoji}                        
@@ -57,7 +57,7 @@ const MoodTest = ({selectedAnswerOne}) => {
                     <label htmlFor = 'insomnia'>Insomnia</label>
                     <IconButton
                     name = 'insomnia'
-                    value= 'insomnia'
+                    value= 'INSOMIA'
                     onClick = {selectedAnswerOne}>
                         <img 
                             className = {styles.emoji}                        
@@ -65,15 +65,15 @@ const MoodTest = ({selectedAnswerOne}) => {
                             alt = 'Insomnia emoji'
                         />  
                     </IconButton>
-                    <label htmlFor = 'sad'>Sad</label>
+                    <label htmlFor = 'lowmood'>Low mood</label>
                     <IconButton
-                        name = 'sad'
-                        value = 'sad'
+                        name = 'lowmood'
+                        value = 'LOW_MOOD'
                         onClick = {selectedAnswerOne}>
                         <img 
                             className = {styles.emoji}                        
-                            src = {sad}
-                            alt = 'Sad emoji'
+                            src = {lowmood}
+                            alt = 'lowmood emoji'
                         />
                     </IconButton>
                 </div>                    

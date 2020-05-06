@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import styles from './Landing.module.css';
 import Header from './HeaderComponent';
 import MoodTest from './MoodTest';
@@ -8,19 +8,20 @@ import NoShow from './NoShowTest'
 import Carrousel from './CarrouselComponent';
 
 const Landing = () => {
+    // const { value, setValue } = useContext(ConfContext)
     const [value, setValue] = useState({
-        mood: '',
-        time: '',
-        noShow: '',
+        feeling: '',
+        RUNTIME: '',
+        NO_SHOW: '',
     });
+    console.log(value);
     const [view, setView] = useState(0);
 
     const selectedAnswerOne = (event) => {
         const selectedValue = event.currentTarget.value;
         setValue({
-            mood: selectedValue,
-            time: value.time,
-            noShow: value.noShow,
+            ...value,
+            feeling: selectedValue,
         });
         setView(1);        
     }
@@ -28,9 +29,8 @@ const Landing = () => {
     const selectedAnswerTwo = (event) => {
         const selectedValue = event.currentTarget.value;
         setValue({
-            mood: value.mood,
-            time: selectedValue,
-            noShow: value.noShow,
+            ...value,
+            RUNTIME: selectedValue,
         })
      
         setView(2); 
@@ -38,23 +38,25 @@ const Landing = () => {
       /*  const aux = view - 1;
         setView(aux); */
 
-    const history = useHistory();
+    // const history = useHistory();
     const selectedAnswerThree = (event) => {
         const selectedValue = event.currentTarget.value;
         setValue({
-            mood: value.mood,
-            time: value.time,
-            noShow: selectedValue,
+            ...value,
+            NO_SHOW: selectedValue,
         }) 
-        history.push('/result');      
-        console.log(value);
+        // history.push('/result');      
     }
+    const goBack = () => {
+        const aux = view - 1;
+        setView(aux);
+    };
 
     return(
-        <main className={styles.Container}>
+        <>
         {view === 0 
         ? 
-        (<div>
+        (<div className= {styles.Container}>
             <Header />
             <MoodTest selectedAnswerOne= {selectedAnswerOne}/>
             <Carrousel />
@@ -62,13 +64,13 @@ const Landing = () => {
         : null}
         { view === 1
         ?
-        ( <TimeTest selectedAnswerTwo= {selectedAnswerTwo}/>)
+        ( <TimeTest selectedAnswerTwo= {selectedAnswerTwo}  handleGoBack= {goBack}/>)
         : null}
         { view === 2
         ?
-        ( <NoShow selectedAnswerThree = {selectedAnswerThree}/>)
+        ( <NoShow selectedAnswerThree = {selectedAnswerThree}  handleGoBack= {goBack}/>)
         : null}  
-    </main>     
+      </>     
     )
 };
 

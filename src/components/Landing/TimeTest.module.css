@@ -1,31 +1,34 @@
 @media only screen and (max-width: 600px) {
-.moodContainer {
+.timeContainer{
     font-family: var(--font-poppins);
-    color: white;  
+    background: var(--shakespeare);  
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-style: solid;
+    border-color: white;
+    border-width: 15px;
 }
-
-.emoji{
-    height:40px;
-    width: 40px;
+.goBackButton {
+    font-size: 16px;
+    background-color: var(--hockey-pokey);
 }
-.moodContainer label {
-    font-size: 14px;
-}
-.moodContainer legend{
+.timeContainer legend{
     font-weight: bold;
     width: 200px;
     padding: 6px;
     margin-left: calc(50% - 100px - 2px);
-    margin-top: 18vw;
+    margin-top: 0vw;
     background-color: var(--light-grey);
     border-style: double;
     border-radius: 4%;
     border-width: 6px;
     color: #443D67;
 }
-.moodContainer fieldset {
+.timeContainer fieldset{
     display: block;
-    background-color: #E1998A;
+    background-color: transparent;
     margin-inline-start: 2px;
     margin-inline-end: 2px;
     padding-block-start: 1em;
@@ -34,8 +37,7 @@
     padding-block-end: 0.625em;
     min-inline-size: min-content;
     border-width: 6px;
-    border-style: groove;
+    border-style: none;
     border-radius: 8%;
 }
-/* estilo de letras tamano de emojis */
 }

@@ -1,6 +1,6 @@
 @media only screen and (max-width: 600px) {
     .Container {
-        background-color: rgb(140, 148, 221);
+        background-color: var(--smalt-blue);
         font-family: var(--font-poppins);
         height: 100%;
         color: white;
