@@ -1,0 +1,42 @@
+/* Screen container */
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--hockey-pokey);
+}
+
+header{
+	width: 100vw;
+	height: 15%;
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer {
+	width: 100vw;
+	padding: 20px 0px 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	max-width: 500px;
+	width: 75%;
+}
+
+.home {
+	border-radius: 50px;
+}
+
+.home:hover {
+	-webkit-box-shadow: 10px 10px 29px -14px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 29px -14px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 29px -14px rgba(0,0,0,0.75);
+}
