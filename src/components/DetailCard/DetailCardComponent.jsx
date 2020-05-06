@@ -7,18 +7,18 @@ import StarIcon from '@material-ui/icons/Star';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
 import { yellow } from '@material-ui/core/colors';
-
+import mockImage from '../../assets/mocking.jpg'
 const DetailCard = () => {
     const classes = useStyles();
 
     return (
         <Container className={classes.root}>
             <Card className={classes.container}>
-            {/*<img 
-            src={mockImage} 
-            className={classes.media} 
-            alt="Poster" 
-            />*/}
+                <img 
+                src={mockImage} 
+                className={classes.media} 
+                alt="Poster" 
+                />
                 <CardHeader
                 title="Moonrise Kingdom"
                 subheader="(2012) | Comedy, Drama | 94min."
