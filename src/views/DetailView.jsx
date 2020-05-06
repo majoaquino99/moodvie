@@ -1,5 +1,5 @@
 import React from 'react';
-import DetailCard from '../components/DetailCard/DetailCardComponent';
+import DetailCard from '../components/DetailCardComponent';
 
 const DetailView = () => {
     return(
