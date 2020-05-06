@@ -1,4 +1,4 @@
-export const mockData = [
+const mockData = [
 	{
 		"id": "tt3168760",
 		"title": "Getting to the Nutcracker",
@@ -55,3 +55,4 @@ export const mockData = [
 		"imgURL": "https://yts.mx/assets/images/movies/silver_city_2004/large-cover.jpg",
 	},
 ];
+export default mockData;

@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Oleo+Script|Poppins:400,500,600,700&display=swap');
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(255, 255, 255);
+  }
 
 :root {
   --font-poppins: 'Poppins', sans-serif; 
@@ -19,4 +22,5 @@ body, html, #root, .App{
   margin: 0;
   background: var(--light-grey);
 }
+
 
