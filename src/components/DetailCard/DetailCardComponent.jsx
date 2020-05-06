@@ -10,9 +10,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
 import { yellow } from '@material-ui/core/colors';
 import mockImage from '../../assets/mocking.jpg'
+import data from '../../mockData';
 
+const DetailCard =  (props)  => {
+    console.log(props)
 
-const DetailCard = () => {
     const classes = useStyles();
     const [showOverview, setShowOverwiew] = useState(true);
 
@@ -90,7 +92,7 @@ const useStyles = makeStyles({
         margin: '0px 0px 0px 10px',
         paddingTop: '20vw',
         display: 'flex',
-        flexFlow: 'column',
+        flexFlow: 'column wrap',
         alignSelf: 'flex-end',
         alignItems: 'center'
     },
@@ -115,7 +117,7 @@ const useStyles = makeStyles({
         marginTop: '5vw',
     },
     info: {
-        fontSize: 15,
+        fontSize: 16,
     },
     score: {
         display: 'flex',

@@ -1,16 +1,22 @@
 import React from 'react';
-import DetailView from './views/DetailView';
+import Landing from './views/LandingView';
+import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
+
+
 
 function App() {
-
   return (
-      <DetailView/>
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route exact path = '/' component= {Landing} />      
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
-
 export default App;
-
 
 
 
