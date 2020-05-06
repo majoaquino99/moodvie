@@ -3,6 +3,7 @@
 ## Table of Contents
 * [1. Introduction](#1-introduction)
 <!-- gio -->
+This will be the introduction
 * [2. Overview (key features)](#2-overview)
 <!-- gio -->
 * [3. Motivation](#3-motivation)
