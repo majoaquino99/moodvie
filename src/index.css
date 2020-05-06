@@ -3,20 +3,24 @@
     background-color: rgb(255, 255, 255);
   }
 
-  @import url('https://fonts.googleapis.com/css?family=Oleo+Script|Poppins:400,500,600,700&display=swap');
+:root {
+  --font-poppins: 'Poppins', sans-serif; 
+  --font-oleo-script:  'Oleo Script', cursive;
+  --white: #FFFFFF;
+  --light-grey: rgb(248, 248, 248);
+  --nero-base: #1D1D1D;
+  --smalt-blue: #557B86;
+  --dark-blue: #443D67;
+  --hockey-pokey: #D19C2C;
+  --merlot: #8C1A22;
+  --shakespeare: #5398B7;
+}
 
-  :root {
-    --font-poppins: 'Poppins', sans-serif; 
-    --font-oleo-script:  'Oleo Script', cursive;
-    --white: #FFFFFF;
-    --light-grey: #D7D7D7;
-    --nero-base: #1D1D1D;
-    --smalt-blue: #557B86;
-    --dark-blue: #443D67;
-    --hockey-pokey: #D19C2C;
-    --merlot: #8C1A22;
-    --shakespeare: #5398B7;
-  }
+body, html, #root, .App{  
+  text-align: center;
+  height: 100%;
+  margin: 0;
+  background: var(--light-grey);
 }
 
 
