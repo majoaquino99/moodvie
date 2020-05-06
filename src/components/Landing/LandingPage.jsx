@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
 import styles from './Landing.module.css';
 import Header from './HeaderComponent';
 import MoodTest from './MoodTest';
 import TimeTest from './TimeTest';
 import NoShow from './NoShowTest'
-import Carrousel from './CarrouselComponent';
 
 const Landing = () => {
     // const { value, setValue } = useContext(ConfContext)
@@ -59,7 +57,6 @@ const Landing = () => {
         (<div className= {styles.Container}>
             <Header />
             <MoodTest selectedAnswerOne= {selectedAnswerOne}/>
-            <Carrousel />
         </div> )
         : null}
         { view === 1

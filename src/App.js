@@ -1,6 +1,5 @@
 import React from 'react';
 import Landing from './views/LandingView';
-import Result from './views/Result';
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 
 
@@ -10,8 +9,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path = '/' component= {Landing} />
-          <Route exact path = '/result' component= {Result} />          
+          <Route exact path = '/' component= {Landing} />      
         </Switch>
       </Router>
     </div>
