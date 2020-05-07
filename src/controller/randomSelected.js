@@ -2,8 +2,8 @@ const axios = require('axios');
 
 const BASE_API = 'https://yts.mx/api/v2/list_movies.json';
 
-async function randomSelected(){
- 
+export default async function randomSelected(){
+
 //  * 1. Fetch all the data list
     async function getData(url){
         const {data} = await axios.get(url)
@@ -21,7 +21,7 @@ async function randomSelected(){
 
     const detailPromises = movies.map(async ({imdb_code: id}) => {
     const API_KEY = 'ea0e8d2f';
-    return getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);           
+    return getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
     });
 
 
@@ -48,9 +48,9 @@ const randomResults = moviesData.map( movie =>{
 
 };
 
-randomSelected()
-.then(console.log)
-.catch(err=> console.log(err.stack))
-.finally(()=>{
-    debugger
-})
+// randomSelected()
+// .then(console.log)
+// .catch(err=> console.log(err.stack))
+// .finally(()=>{
+//     debugger
+// })
