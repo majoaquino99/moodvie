@@ -9,52 +9,65 @@ import StarIcon from '@material-ui/icons/Star';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
 import { yellow } from '@material-ui/core/colors';
-import mockImage from '../../assets/mocking.jpg'
-import data from '../../mockData';
 
-const DetailCard =  (props)  => {
-    console.log(props)
+const DetailCard = ({movieData, closeModal})  => {
 
     const classes = useStyles();
     const [showOverview, setShowOverwiew] = useState(true);
 
     return (
-        <Container className={classes.root} style={{ backgroundImage: 'url({mockImage})' }}>
+        <Container className={classes.root}>
             <Card className={classes.container}>
                 <img 
-                src={mockImage} 
+                src={movieData.imgURL} 
                 className={classes.media} 
                 alt="Poster" 
                 />
                 <CardHeader
-                title="Moonrise Kingdom"
-                subheader="Comedy,Drama | (2012) | 94min."
-                />
+                title={movieData.title}
+                subheader={`${movieData.genres} | ${movieData.year} | ${movieData.runtime}`}                />
                 <CardContent>
                 <CardActions className={classes.buttons}>
-                    <Button size="medium" style={{ color: yellow[700] }} onClick={ ()=> setShowOverwiew(true) }>
+                    <Button 
+                    size="medium" 
+                    style={{ color: yellow[700] }} 
+                    onClick={()=>setShowOverwiew(true)}
+                    >
                     OVERVIEW
                     </Button>
-                    <Button size="medium" style={{ color: yellow[700] }} onClick={ ()=> setShowOverwiew(false) }>
+                    <Button 
+                    size="medium" 
+                    style={{ color: yellow[700] }} 
+                    onClick={()=> setShowOverwiew(false)}
+                    >
                     INFO
                     </Button>
                 </CardActions>
                 { showOverview ?
-                <Typography variant="body1" color="textPrimary" component="p">
-                    A pair of young lovers flee their New England town, which causes a local search party to fan out to find them.
+                <Typography 
+                variant="body1" 
+                color="textPrimary" 
+                component="p"
+                >
+                    movieData.summary
                 </Typography>
                 : null }
                 { showOverview ? null :
                 <section className={classes.section}>
-                    <Typography className={classes.info} color="textSecondary" component="p">
-                        Director: Wes Anderson  
+                    <Typography 
+                    className={classes.info} 
+                    color="textSecondary" 
+                    component="p">
+                        Director: movieData.director  
                         <br/>
-                        Writter: Wes Anderson
+                        Writter: movieData.writer
                         <br/>
-                        Language: English
+                        Language: {movieData.language}
                     </Typography>
-                    <div className={classes.score}>
-                        <StarIcon style={{ color: yellow[700] }} fontSize="large"/>
+                    <div className={classes.imdbRating}>
+                        <StarIcon 
+                        style={{ color: yellow[700] }} 
+                        fontSize="large"/>
                         <Typography variant="h5">
                             7.8
                         </Typography>
@@ -63,10 +76,21 @@ const DetailCard =  (props)  => {
                 }
                 </CardContent>
                 <CardActions className={classes.buttons}>
-                    <Button size="small" color="secondary" variant="outlined" className={classes.addList}>
+                    <Button 
+                    size="small" 
+                    color="secondary" 
+                    variant="outlined" 
+                    className={classes.addList}
+                    >
                     ADD TO MY LIST
                     </Button>
-                    <Button size="small" color="secondary" variant="outlined" className={classes.addList}>
+                    <Button 
+                    size="small" 
+                    color="secondary" 
+                    variant="outlined" 
+                    className={classes.addList}
+                    onClick={closeModal}
+                    >
                     GO BACK
                     </Button>
                 </CardActions>
