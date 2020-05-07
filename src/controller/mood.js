@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 //MOODS
 const STRESSED= ['comedy', 'family', 'sport',];
 const JUST_CHILLING= ['comedy', 'animation', 'horror', 'musical', 'thriller'];
@@ -11,31 +13,27 @@ const BASE_API = 'https://yts.mx/api/v2/list_movies.json';
 
 
 //Get results of the mood function
-    async function giveResultsByMood (mood, time, not) {
+    async function giveResults (mood, time, blacklist) {
+
+/*
+ * 1. Fetch all the data list
+ * 2. Fetch all the details from items
+ * 3. Filter 
+ * 4. Transform
+ * 5. Return 
+*/
+
 
         //Get data function
         async function getData(url){
-          const response = await fetch(url)
-          const data = await response.json()
+          const {data} = await axios.get(url)
           return data;
         }
 
         // 1ro. Agarrar el array de géneros seleccionado por el MOOD
-        // 2do. Eliminar el genero NOT_SHOW del array de generos agarrados
+        // 2do. Eliminar el genero blacklist del array de generos agarrados
+        const newMoodGenreArray = mood.filter(m => blacklist !== m);
 
-        const deleteGenre = (array, element) => {
-            let resultGenreArray =[];
-            for(let k=0; k<array.length; k++){
-                if(array[k] !== element){
-                    resultGenreArray.push(array[k])
-                    console.log(resultGenreArray);
-                }
-            }
-            return resultGenreArray;
-        }
-
-        const newMoodGenreArray = deleteGenre(mood, not); // se corre la función con los parametros 1 y 3
-        
         
         // 3ro. Hacer un randomize de los géneros que quedan
         const randomNumberMood = Math.floor((Math.random() * newMoodGenreArray.length - 1 ) + 1  );
@@ -44,50 +42,43 @@ const BASE_API = 'https://yts.mx/api/v2/list_movies.json';
         
         // 4to. Obtener datos de las APIs del género random que salió
 
-        const dataForMood = await getData(`${BASE_API}?genre=${randomGenreMood}&sort_by=rating`);
-        const movieDataForMood =dataForMood.data.movies;
-         
-        const idForMood = movieDataForMood.map(singleMovie =>{
-            return singleMovie.imdb_code;
-        });
+
+        const {data: { movies }} = await getData(`${BASE_API}?genre=${randomGenreMood}&sort_by=rating`);
+        
           
-        idForMood.map(async (id) => {
+        const detailPromises = movies.map(async ({imdb_code: id}) => {
           const API_KEY = 'ea0e8d2f';
-          const infoMoviesForMood = await getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
-            
-          // 5to. Filtrar por el runtime seleccionado
-          // 6to. Mostrar/Return información en objeto 
-    
-          let runtimeStr = infoMoviesForMood.Runtime;
-          let runtimeNumber = parseInt(runtimeStr, 10) 
-
-          if(runtimeNumber <= time){
-                 
-              const resultDataMood ={
-                    title: infoMoviesForMood.Title,
-                    imgURL: infoMoviesForMood.Poster,
-                    year: infoMoviesForMood.Year,
-                    runtime: infoMoviesForMood.Runtime,
-                    genre: infoMoviesForMood.Genre,
-                    summary:infoMoviesForMood.Plot,
-                    director: infoMoviesForMood.Director,
-                    writer: infoMoviesForMood.Writer,
-                    actors : infoMoviesForMood.Actors,
-                    language : infoMoviesForMood.Language,
-                    country: infoMoviesForMood.Country,
-                    imdbRating: infoMoviesForMood.imdbRating,
-                    type: infoMoviesForMood.Type,
-                }
-
-                console.log(resultDataMood)
-                return infoMoviesForMood;
-                return resultDataMood;   
-                }
+          return getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);           
         });
-    }
+
+        
+        const moviesData = await Promise.all(detailPromises);
+        
+        const filteredMovies = moviesData.filter(({Runtime: RuntimeStr})=>{
+            const runtime = parseInt(RuntimeStr, 10);
+            return runtime <= time;
+        });
+
+        return filteredMovies.map(movie=>({
+            title: movie.Title,
+            imgURL: movie.Poster,
+            year: movie.Year,
+            runtime: movie.Runtime,
+            genre: movie.Genre,
+            summary:movie.Plot,
+            director: movie.Director,
+            writer: movie.Writer,
+            actors : movie.Actors,
+            language : movie.Language,
+            country: movie.Country,
+            imdbRating: movie.imdbRating,
+            type: movie.Type,
+        }));
+    };
+
+    giveResults(JUST_CHILLING, 300, 'animation')
+    .then(console.log)
+    .catch(err=>{console.log(err.stack)});
 
 
-
-//correr función con parametros mock
-
-    giveResultsByMood(JUST_CHILLING, 300, 'animation');
+    

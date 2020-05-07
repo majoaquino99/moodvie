@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+
+:root {
+  --font-poppins: 'Poppins', sans-serif; 
+  --font-oleo-script:  'Oleo Script', cursive;
+  --white: #FFFFFF;
+  --light-grey: rgb(248, 248, 248);
+  --nero-base: #1D1D1D;
+  --smalt-blue: #557B86;
+  --dark-blue: #443D67;
+  --hockey-pokey: #D19C2C;
+  --merlot: #8C1A22;
+  --shakespeare: #5398B7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body, html, #root, .App{  
+  text-align: center;
+  height: 100%;
+  margin: 0;
+  background: var(--light-grey);
 }
+
+
