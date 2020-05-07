@@ -21,6 +21,7 @@ You're on a bad mood. You're stressed from work or school. You **just want to wa
 ## 2. Overview
 
 ## 3. Motivation
+In times as this, isolated at home, with all of this feelings happening inside, we thought it would be a good idea to create a platform to select a movie based on your feelings. #stayathome, and stay healthy.
 
 
 ## 4. User Stories
