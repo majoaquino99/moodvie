@@ -1,22 +1,20 @@
-@media only screen and (max-width: 600px) {
 .moodContainer {
     font-family: var(--font-poppins);
     color: white;  
 }
-
 .emoji{
-    height:40px;
-    width: 40px;
+    height: 70px;
+    width: 70px;
 }
 .moodContainer label {
-    font-size: 14px;
+    font-size: 20px;
 }
 .moodContainer legend{
     font-weight: bold;
     width: 200px;
     padding: 6px;
     margin-left: calc(50% - 100px - 2px);
-    margin-top: 18vw;
+    margin-top: 2vw;
     background-color: var(--light-grey);
     border-style: double;
     border-radius: 4%;
@@ -36,6 +34,17 @@
     border-width: 6px;
     border-style: groove;
     border-radius: 8%;
+}
+@media only screen and (max-width: 600px) {
+.emoji{
+    height:40px;
+    width: 40px;
+}
+.moodContainer label {
+    font-size: 14px;
+}
+.moodContainer legend{
+    margin-top: 10vw;
 }
 /* estilo de letras tamano de emojis */
 }

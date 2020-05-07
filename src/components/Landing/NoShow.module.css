@@ -1,44 +1,43 @@
+.noShowContainer{
+    font-family: var(--font-poppins);
+    background: var(--merlot); 
+    color: white; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-style: solid;
+    border-color: white;
+    border-width: 15px;
+}
+.noShowContainer legend{
+    font-weight: bold;
+    width: 200px;
+    padding: 6px;
+    margin-left: calc(50% - 100px - 2px);
+    margin-top: 0vw;
+    background-color: var(--light-grey);
+    border-style: double;
+    border-radius: 4%;
+    border-width: 6px;
+    color: #443D67;
+}
+.noShowContainer fieldset{
+    display: block;
+    background-color: transparent;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 1em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-style: none;
+}
+.noShowContainer label{
+    font-size: 25px;
+}
 @media only screen and (max-width: 600px) {
-    .noShowContainer{
-        font-family: var(--font-poppins);
-        background: var(--merlot); 
-        color: white; 
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        border-style: solid;
-        border-color: white;
-        border-width: 15px;
-    }
-    .goBackButton{
-        font-size: 16px;
-        background-color: white;
-    }
-    .noShowContainer legend{
-        font-weight: bold;
-        width: 200px;
-        padding: 6px;
-        margin-left: calc(50% - 100px - 2px);
-        margin-top: 0vw;
-        background-color: var(--light-grey);
-        border-style: double;
-        border-radius: 4%;
-        border-width: 6px;
-        color: #443D67;
-    }
-    .noShowContainer fieldset{
-        display: block;
-        background-color: transparent;
-        margin-inline-start: 2px;
-        margin-inline-end: 2px;
-        padding-block-start: 1em;
-        padding-inline-start: 0.75em;
-        padding-inline-end: 0.75em;
-        padding-block-end: 0.625em;
-        min-inline-size: min-content;
-        border-style: none;
-    }
     .noShowContainer label{
         font-size: 20px;
     }
