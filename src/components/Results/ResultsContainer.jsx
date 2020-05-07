@@ -8,8 +8,6 @@ import home from '../../assets/icons/home.svg';
 import Slider from '../Slider';
 
 function ResultsContainer({testResults}) {
-	// Here goes the function to retrive data
-
 	return (
 		<div className={styles.container}>
 			<header>
