@@ -15,12 +15,13 @@ This will be the introduction
 
 
 ## 1. Introduction
-##What am I going to watch?
+##What am I going to watch? :film_strip:
 You're on a bad mood. You're stressed from work or school. You **just want to watch something**, but spending more time choosing a movie than actually watching it doesn´t sound like a great idea, right? And, what if it sucks? Yeez, that just gets you in a worse mood. But not anymore with *moodvie* It won't only pick random movies out of great ratings for you, but it will also generate a movie based on how much time you've got, what type of mood are you in, and what type of move you **definetely** don't want to watch.  In other words *you need to* use this app.
 
 ## 2. Overview
 
 ## 3. Motivation
+In times as this, isolated at home, with all of this feelings happening inside, we thought it would be a good idea to create a platform to select a movie based on your feelings. #stayathome, and stay healthy.
 
 
 ## 4. User Stories
