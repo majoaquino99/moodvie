@@ -10,7 +10,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
 import { yellow } from '@material-ui/core/colors';
 import mockImage from '../../assets/mocking.jpg'
-import data from '../../mockData';
 
 const DetailCard =  (props)  => {
     console.log(props)
@@ -21,10 +20,10 @@ const DetailCard =  (props)  => {
     return (
         <Container className={classes.root} style={{ backgroundImage: 'url({mockImage})' }}>
             <Card className={classes.container}>
-                <img 
-                src={mockImage} 
-                className={classes.media} 
-                alt="Poster" 
+                <img
+                src={mockImage}
+                className={classes.media}
+                alt="Poster"
                 />
                 <CardHeader
                 title="Moonrise Kingdom"
@@ -47,7 +46,7 @@ const DetailCard =  (props)  => {
                 { showOverview ? null :
                 <section className={classes.section}>
                     <Typography className={classes.info} color="textSecondary" component="p">
-                        Director: Wes Anderson  
+                        Director: Wes Anderson
                         <br/>
                         Writter: Wes Anderson
                         <br/>
