@@ -4,15 +4,22 @@ import musical from '../../assets/icons/musical.svg';
 import romance from '../../assets/icons/romance.svg';
 import thriller from '../../assets/icons/thriller.svg';
 import action from '../../assets/icons/action.svg';
+import back from '../../assets/icons/back.svg'
 import styles from './NoShow.module.css';
 
 
 const NoShow = ({selectedAnswerThree, handleGoBack}) => {
     return(
         <div className={styles.noShowContainer}>
-            <button 
-                className = {styles.goBackButton}
-                onClick = {handleGoBack}>Go back</button>
+            <IconButton 
+                className= {styles.goBackButton}
+                onClick={handleGoBack}>
+                <img 
+                    src = {back} 
+                    alt= 'Back'
+                    height='40'
+                    width='40'
+                /></IconButton>
             <legend>Please don´t show anything with</legend>
             <fieldset >
                 <div>

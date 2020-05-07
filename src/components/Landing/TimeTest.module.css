@@ -13,6 +13,8 @@
 .goBackButton {
     font-size: 16px;
     background-color: var(--hockey-pokey);
+    justify-content: start;
+    position: fixed;
 }
 .timeContainer legend{
     font-weight: bold;
