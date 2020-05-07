@@ -23,7 +23,6 @@ const newMoodGenreArray = moodList[mood].filter(m => blacklist !== m);
 
 const randomNumberMood = Math.floor((Math.random() * newMoodGenreArray.length - 1 ) + 1  );
 const randomGenreMood= newMoodGenreArray[randomNumberMood];
-console.log('random Genre Mood' , randomGenreMood);
 
 //  * 2. Fetch all the details from items
 
@@ -61,9 +60,3 @@ return filteredMovies.map(movie=>({
 	type: movie.Type,
 }));
 };
-/*
-giveResults(JUST_CHILLING, 300, 'animation')
-.then(console.log)
-.catch(err=>{console.log(err.stack)});
-
-*/

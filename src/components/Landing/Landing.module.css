@@ -3,7 +3,7 @@
     font-family: var(--font-poppins);
     height: 100%;
     color: white;
-} 
+}
 .Container h3 {
     font-weight: bold;
     width: 200px;
@@ -15,40 +15,10 @@
     border-radius: 4%;
     border-width: 6px;
     color: #443D67;
-}   
+}
 @media only screen and (max-width: 600px) {
     .Container h3 {
         margin-top: 20vw;
-    }   
-   
+    }
+
 }
-
- /* .landing {
-        font-family: var(--font-poppins);
-        background: var(--light-grey);
-        position: relative;
-        height: calc(100% - 45px);
-        max-width: 480px;
-        margin: 0 auto;
-    }
-    h1 {
-        font-family: var(--font-oleo-script);
-    }
-    
-    h2 {
-        margin: 1rem 0;
-        color: var(--dark-blue);
-        font-weight: bold;
-        font-size: 1.25em;
-        text-align: center;
-    }
-    
-    .emojiSection{
-        color: var(--hokey-pokey);
-        z-index: 22;
-    } */
-    
-
-
-
-

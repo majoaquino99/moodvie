@@ -9,7 +9,6 @@ function Result(props) {
 
 	useEffect(() => {
 		giveResults(props.location.state.value).then( (response) => {
-			console.log(response);
 			setSliderData(response);
 		}).catch((error) => {
 			console.error(error);

@@ -3,8 +3,8 @@ const axios = require('axios');
 const BASE_API = 'https://yts.mx/api/v2/list_movies.json';
 
 async function genreSelected(userSelection){
-  
-  
+
+
     //  * 1. Fetch all the data list
 
 async function getData(url){
@@ -17,7 +17,7 @@ async function getData(url){
 
   const detailPromises = movies.map(async ({imdb_code: id}) => {
   const API_KEY = 'ea0e8d2f';
-  return getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);           
+  return getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
   });
 
 
@@ -42,8 +42,4 @@ const genreResults = moviesData.map( movie =>{
     })
  return genreResults;
 };
-
-genreSelected('action')
-.then(console.log)
-.catch(err=>console.log(err.stack));
 
