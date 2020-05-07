@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/moodvie/static/css/main.dfa17c05.chunk.css",
-    "main.js": "/moodvie/static/js/main.5e8b1e9b.chunk.js",
-    "main.js.map": "/moodvie/static/js/main.5e8b1e9b.chunk.js.map",
+    "main.js": "/moodvie/static/js/main.d20d537f.chunk.js",
+    "main.js.map": "/moodvie/static/js/main.d20d537f.chunk.js.map",
     "runtime-main.js": "/moodvie/static/js/runtime-main.24c482d0.js",
     "runtime-main.js.map": "/moodvie/static/js/runtime-main.24c482d0.js.map",
     "static/js/2.5688c461.chunk.js": "/moodvie/static/js/2.5688c461.chunk.js",
     "static/js/2.5688c461.chunk.js.map": "/moodvie/static/js/2.5688c461.chunk.js.map",
     "index.html": "/moodvie/index.html",
-    "precache-manifest.5b6f83428b0db38d95d629313ad60ca3.js": "/moodvie/precache-manifest.5b6f83428b0db38d95d629313ad60ca3.js",
+    "precache-manifest.89649d664cbae380bfe5664a942dde92.js": "/moodvie/precache-manifest.89649d664cbae380bfe5664a942dde92.js",
     "service-worker.js": "/moodvie/service-worker.js",
     "static/css/main.dfa17c05.chunk.css.map": "/moodvie/static/css/main.dfa17c05.chunk.css.map",
     "static/js/2.5688c461.chunk.js.LICENSE.txt": "/moodvie/static/js/2.5688c461.chunk.js.LICENSE.txt",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.24c482d0.js",
     "static/js/2.5688c461.chunk.js",
     "static/css/main.dfa17c05.chunk.css",
-    "static/js/main.5e8b1e9b.chunk.js"
+    "static/js/main.d20d537f.chunk.js"
   ]
 }
