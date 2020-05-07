@@ -1,0 +1,32 @@
+/*
+      Anthony Krivonos
+      Flix Carousel
+      src/carousel.js
+      09.13.2018
+*/
+
+/* Global Variables */
+:root {
+
+	/* Tile Dimensions */
+	--carouselTile-spacing: 10px;
+	--carouselTile-width:   280px;
+	--carouselTile-height:  calc(var(--carouselTile-width) / (16 / 9));
+
+	/* Growth Factor */
+	--carousel-growth-factor: 1.2;
+
+	/* Fade to Opacity */
+	--carousel-fade-opacity:   0.25;
+	--carousel-normal-opacity: 1;
+
+	/* Automatic Offsets - DO NOT ALTER */
+	--carousel-offset-left:  calc(-1 * (var(--carouselTile-width) * (var(--carousel-growth-factor) - 1) / 2));
+	--carousel-offset-right: calc(var(--carouselTile-width) * (var(--carousel-growth-factor) - 1));
+
+	/* Transition Speeds */
+	--carousel-transition-1: 1s;
+	--carousel-transition-2: 0.5s;
+	--carousel-transition-3: 0.3s;
+
+}

@@ -1,0 +1,30 @@
+assets 
+-icons 
+-images
+components 
+Carpeta DetailCard
+-DetailCardComponent.jsx traer data mock y asignar valores
+-index.jsx
+
+Carpeta LandingPage
+-HeaderComponent.jsx
+-MoodTestComponent.jsx 
+-------logica return (<Modal/>)
+-ModalTestComponent.jsx
+-CarrouselComponent.jsx
+-index.jsx
+
+views 
+-DetailView.jsx    return(<Header/> <DetailCard/>)
+**LandingView.jsx   logica return(<Header/><MoodTest/><Carrouse/>)
+
+controller 
+
+styles 
+-DetailCard.module.css
+-Headers.module.css
+-MoodTest.module.css
+-Carrouse.module.css
+
+app.js 
+Switch con views

@@ -1,0 +1,37 @@
+.timeContainer{
+    font-family: var(--font-poppins);
+    background: var(--shakespeare);  
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-style: solid;
+    border-color: white;
+    border-width: 15px;
+}
+.timeContainer legend{
+    font-weight: bold;
+    width: 200px;
+    padding: 6px;
+    margin-left: calc(50% - 100px - 2px);
+    margin-top: 0vw;
+    background-color: var(--light-grey);
+    border-style: double;
+    border-radius: 4%;
+    border-width: 6px;
+    color: #443D67;
+}
+.timeContainer fieldset{
+    display: block;
+    background-color: transparent;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 1em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 6px;
+    border-style: none;
+    border-radius: 8%;
+}
