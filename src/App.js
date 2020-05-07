@@ -8,6 +8,7 @@ import { Result, LandingView } from './views';
 
 
 function App() {
+
   return (
       <Router>
         <Switch>
@@ -19,7 +20,9 @@ function App() {
   );
 }
 
+
 export default App;
+
 
 
 

@@ -9,10 +9,8 @@ import StarIcon from '@material-ui/icons/Star';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
 import { yellow } from '@material-ui/core/colors';
-import mockImage from '../../assets/mocking.jpg'
 
 const DetailCard =  ({movieData, closeModal})  => {
-	console.log(movieData);
     const classes = useStyles();
     const [showOverview, setShowOverwiew] = useState(true);
 
