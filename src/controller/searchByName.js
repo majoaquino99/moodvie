@@ -1,17 +1,18 @@
+const axios = require('axios');
 //Search by Name Function
 async function searchTitleMovie(searchTitle){
 
-  //Get data function
-  async function getData(url){
-  const response = await fetch(url)
-  const data = await response.json()
-  return data;
-  }
+//  * 1. Fetch all the data list
 
+async function getData(url){
+  const {data} = await axios.get(url)
+  return data;
+}
 
 
 const API_KEY = 'ea0e8d2f';
 const infoMoviesByGenreSearch = await getData(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTitle}`);
+
 const resultData = infoMoviesByGenreSearch.Search;
 const resultDataObj = resultData.map( infoMoviesByGenre =>{
     return {
@@ -30,7 +31,12 @@ const resultDataObj = resultData.map( infoMoviesByGenre =>{
         type: infoMoviesByGenre.Type,
        }
    })
-console.log(resultDataObj);
-}
+   return resultDataObj;
+};
 
-searchTitleMovie('super');  //3. User search by title
+searchTitleMovie('super')
+.then(console.log)
+.catch(err=>console.log(err))
+.finally(()=>{
+  debugger
+});  //3. User search by title
