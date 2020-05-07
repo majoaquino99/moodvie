@@ -50,7 +50,4 @@ const randomResults = moviesData.map( movie =>{
 
 randomSelected()
 .then(console.log)
-.catch(err=> console.log(err.stack))
-.finally(()=>{
-    debugger
-})
+.catch(err=> console.log(err.stack));
