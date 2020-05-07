@@ -11,8 +11,8 @@ const BASE_API = 'https://yts.mx/api/v2/list_movies.json';
 
 
 //Get results of the mood function
-    async function giveResultsByMood (mood, time, not) {
-
+    export default async function giveResultsByMood ({mood, time, not}) {
+		console.log('recibi: ', mood, time, not);
         //Get data function
         async function getData(url){
           const response = await fetch(url)
@@ -28,41 +28,41 @@ const BASE_API = 'https://yts.mx/api/v2/list_movies.json';
             for(let k=0; k<array.length; k++){
                 if(array[k] !== element){
                     resultGenreArray.push(array[k])
-                    console.log(resultGenreArray);
+                    //console.log(resultGenreArray);
                 }
             }
             return resultGenreArray;
         }
 
         const newMoodGenreArray = deleteGenre(mood, not); // se corre la función con los parametros 1 y 3
-        
-        
+
+
         // 3ro. Hacer un randomize de los géneros que quedan
         const randomNumberMood = Math.floor((Math.random() * newMoodGenreArray.length - 1 ) + 1  );
         const randomGenreMood= newMoodGenreArray[randomNumberMood];
-        console.log('random Genre Mood' , randomGenreMood); 
-        
+        console.log('random Genre Mood' , randomGenreMood);
+
         // 4to. Obtener datos de las APIs del género random que salió
 
         const dataForMood = await getData(`${BASE_API}?genre=${randomGenreMood}&sort_by=rating`);
         const movieDataForMood =dataForMood.data.movies;
-         
+
         const idForMood = movieDataForMood.map(singleMovie =>{
             return singleMovie.imdb_code;
         });
-          
+
         idForMood.map(async (id) => {
           const API_KEY = 'ea0e8d2f';
           const infoMoviesForMood = await getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
-            
+
           // 5to. Filtrar por el runtime seleccionado
-          // 6to. Mostrar/Return información en objeto 
-    
+          // 6to. Mostrar/Return información en objeto
+
           let runtimeStr = infoMoviesForMood.Runtime;
-          let runtimeNumber = parseInt(runtimeStr, 10) 
+          let runtimeNumber = parseInt(runtimeStr, 10)
 
           if(runtimeNumber <= time){
-                 
+
               const resultDataMood ={
                     title: infoMoviesForMood.Title,
                     imgURL: infoMoviesForMood.Poster,
@@ -81,13 +81,13 @@ const BASE_API = 'https://yts.mx/api/v2/list_movies.json';
 
                 console.log(resultDataMood)
                 return infoMoviesForMood;
-                return resultDataMood;   
+                return resultDataMood;
                 }
-        });
+		});
     }
 
 
 
 //correr función con parametros mock
 
-    giveResultsByMood(JUST_CHILLING, 300, 'animation');
+    //giveResultsByMood(JUST_CHILLING, 300, 'animation');
