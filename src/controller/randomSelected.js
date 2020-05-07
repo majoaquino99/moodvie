@@ -21,7 +21,7 @@ export default async function randomSelected(){
 
     const detailPromises = movies.map(async ({imdb_code: id}) => {
     const API_KEY = 'ea0e8d2f';
-    return getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
+    return getData(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
     });
 
 
