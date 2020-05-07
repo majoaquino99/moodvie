@@ -40,6 +40,7 @@ As a user, I want to receive a random suggestion of a movie directly and easy, s
 * the app generates random movies .
 * the app generates the movies based only on high ratings.
 * the app displays the movies in a easy-to-view way.
+* the app shows an individual card for each movie
 
 
 **Acceptance Criteria for Web-App**
