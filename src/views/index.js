@@ -1,3 +1,4 @@
 import Result from './Result';
+import LandingView from './LandingView';
 
-export { Result };
+export { Result, LandingView };

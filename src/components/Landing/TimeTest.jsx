@@ -3,13 +3,20 @@ import IconButton from '@material-ui/core/IconButton';
 import clockLess from '../../assets/icons/clockLess.svg';
 import clockMore from '../../assets/icons/clockMore.svg';
 import styles from './TimeTest.module.css';
+import back from '../../assets/icons/back.svg'
 
 const TimeTest = ({selectedAnswerTwo, handleGoBack}) => {
     return(
         <div className= {styles.timeContainer}>
-            <button 
+            <IconButton 
                 className= {styles.goBackButton}
-                onClick={handleGoBack}>Back</button>
+                onClick={handleGoBack}>
+                <img 
+                    src = {back} 
+                    alt= 'Back'
+                    height='40'
+                    width='40'
+                /></IconButton>
             <legend>How much time do you have?</legend>
             <fieldset>
                 <div>
