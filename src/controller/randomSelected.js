@@ -47,10 +47,3 @@ const randomResults = moviesData.map( movie =>{
    return randomResults;
 
 };
-
-// randomSelected()
-// .then(console.log)
-// .catch(err=> console.log(err.stack))
-// .finally(()=>{
-//     debugger
-// })
