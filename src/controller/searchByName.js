@@ -11,7 +11,7 @@ async function getData(url){
 
 
 const API_KEY = 'ea0e8d2f';
-const infoMoviesByGenreSearch = await getData(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTitle}`);
+const infoMoviesByGenreSearch = await getData(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTitle}`);
 
 const resultData = infoMoviesByGenreSearch.Search;
 const resultDataObj = resultData.map( movie =>{
