@@ -73,13 +73,6 @@ const DetailCard =  ({movieData, closeModal})  => {
                 }
                 </CardContent>
                 <CardActions className={classes.buttons}>
-                    <Button 
-                        size="small" 
-                        color="secondary" 
-                        variant="outlined" 
-                        className={classes.addList}>
-                    ADD TO MY LIST
-                    </Button>
 					<Button
 						size="small"
 						color="secondary"
@@ -145,7 +138,8 @@ const useStyles = makeStyles({
         outline: 'none'
     },
     info: {
-        fontSize: 16,
+        fontSize: 15,
+        border: 'none'
     },
     score: {
         display: 'flex',
