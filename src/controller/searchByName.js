@@ -36,7 +36,4 @@ const resultDataObj = resultData.map( movie =>{
 
 searchTitleMovie('super')
 .then(console.log)
-.catch(err=>console.log(err))
-.finally(()=>{
-  debugger
-});  //3. User search by title
+.catch(err=>console.log(err));  //3. User search by title
