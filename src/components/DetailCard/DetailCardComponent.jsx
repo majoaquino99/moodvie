@@ -17,52 +17,69 @@ const DetailCard =  ({movieData, closeModal})  => {
     const [showOverview, setShowOverwiew] = useState(true);
 
     return (
-        <Container className={classes.root} style={{ backgroundImage: 'url({mockImage})' }}>
+        <Container className={classes.root}>
             <Card className={classes.container}>
-                <img
-                src={mockImage}
-                className={classes.media}
-                alt="Poster"
-                />
+                    <img
+                    src={movieData.imgURL}
+                    className={classes.media}
+                    alt="Poster"
+                    />
                 <CardHeader
-                title="Moonrise Kingdom"
-				subheader={`${movieData.genres} | ${movieData.year} | ${movieData.runtime}`}
-				// "Comedy,Drama | (2012) | 94min."
-                />
+                    title={movieData.title}
+                    subheader={`${movieData.genre} | ${movieData.year} | ${movieData.runtime}`}
+                    />
                 <CardContent>
                 <CardActions className={classes.buttons}>
-                    <Button size="medium" style={{ color: yellow[700] }} onClick={ ()=> setShowOverwiew(true) }>
-                    OVERVIEW
-                    </Button>
-                    <Button size="medium" style={{ color: yellow[700] }} onClick={ ()=> setShowOverwiew(false) }>
-                    INFO
+                    <Button 
+                        size="medium" 
+                        style={{ color: yellow[700] }} 
+                        onClick={ ()=> setShowOverwiew(true) }>
+                        OVERVIEW
+                        </Button>
+                        <Button 
+                        size="medium" 
+                        style={{ color: yellow[700] }} 
+                        onClick={ ()=> setShowOverwiew(false) }>
+                        INFO
                     </Button>
                 </CardActions>
                 { showOverview ?
-                <Typography variant="body1" color="textPrimary" component="p">
-                    A pair of young lovers flee their New England town, which causes a local search party to fan out to find them.
+                <Typography 
+                    variant="body2" 
+                    color="textPrimary" 
+                    component="TextArea"
+                    className={classes.Summary}
+                    >
+                        {movieData.summary}
                 </Typography>
                 : null }
                 { showOverview ? null :
                 <section className={classes.section}>
-                    <Typography className={classes.info} color="textSecondary" component="p">
-                        Director: Wes Anderson
-                        <br/>
-                        Writter: Wes Anderson
-                        <br/>
-                        Language: English
+                    <Typography 
+                        className={classes.info} 
+                        color="textSecondary" 
+                        component="TextArea">
+                        {`Director: ${movieData.director}
+                        Writter: ${movieData.writer}
+                        Language: ${movieData.language}`}
                     </Typography>
                     <div className={classes.score}>
-                        <StarIcon style={{ color: yellow[700] }} fontSize="large"/>
+                        <StarIcon 
+                            style={{ color: yellow[700] }} 
+                            fontSize="large"/>
                         <Typography variant="h5">
-                            7.8
+                            {movieData.imdbRating}
                         </Typography>
                     </div>
                 </section>
                 }
                 </CardContent>
                 <CardActions className={classes.buttons}>
-                    <Button size="small" color="secondary" variant="outlined" className={classes.addList}>
+                    <Button 
+                        size="small" 
+                        color="secondary" 
+                        variant="outlined" 
+                        className={classes.addList}>
                     ADD TO MY LIST
                     </Button>
 					<Button
@@ -95,7 +112,7 @@ const useStyles = makeStyles({
         boxShadow: '1px 4px 12px -3px rgba(51,51,51,0.8)',
         textAlign: 'center',
         margin: '0px 0px 0px 10px',
-        paddingTop: '20vw',
+        paddingTop: '15vw',
         display: 'flex',
         flexFlow: 'column wrap',
         alignSelf: 'flex-end',
@@ -116,10 +133,18 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'space-around'
     },
+    Summary: {
+        width: '250px',
+        height: '90px',
+        outline: 'none',
+        border: 'none'
+    },
     section: {
         display: 'flex',
         flexWrap: 'wrap',
         marginTop: '5vw',
+        border: 'none',
+        outline: 'none'
     },
     info: {
         fontSize: 16,
@@ -130,11 +155,8 @@ const useStyles = makeStyles({
         marginLeft: '8vw'
     },
     addList: {
-        marginTop: '12vw'
-    },
-    pos: {
-        marginBottom: 20,
-    },
+        marginTop: '5vw'
+    }
     });
 
 export default DetailCard;
