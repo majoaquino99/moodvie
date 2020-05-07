@@ -13,7 +13,12 @@ const Mock = () => {
             ...movieData,
             item
             });
-    }
+    };
+    const closeModal = () => {
+        setMovieData({});
+        setIsModalOpen(false);
+    };
+    
     return (
         <Root>
         {data.map(item =>  <button
@@ -24,8 +29,10 @@ const Mock = () => {
                             </button>
         )}
         {isModalOpen && (
-            <Overlay onClick={()=>{setIsModalOpen(false)}}>
-                <DetailCard movieData={movieData}/>
+            <Overlay>
+                <DetailCard 
+                movieData={movieData} 
+                closeModal={closeModal} />
             </Overlay>
         )}
         </Root>
@@ -50,6 +57,3 @@ const Mock = () => {
     `;
 
 export default Mock;
-
-//TODO: solucionar el set del modal en detail card 
-//TODO: solucionar el wrap del renderizado condicional de overview e info
