@@ -14,7 +14,7 @@ function App() {
         <Switch>
 			<Route exact path="/" component={LandingView} />
 			<Route exact path="/result" component={Result} />
-			<Redirect to="/" />
+			<Redirect to="/moodvie" />
         </Switch>
       </Router>
   );
