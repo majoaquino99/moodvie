@@ -60,24 +60,28 @@ As a user, I want to receive a random suggestion of a movie directly and easy, s
 
 ## 5. Prototypes
 * **Landing page**
-![Landing Page](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/home.png)
-![Question 01](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/QuestionScreen01.png)
-![Question 02](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/QuestionScreen02.png)
-![Results Page](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/Result.png)
-![Movie Card Detail](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/MovieDetail.png)
+![Landing Page](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/home.png  | width=250)
+![Question 01](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/QuestionScreen01.png  | width=250
+)
+![Question 02](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/QuestionScreen02.png  | width=250
+)
+![Results Page](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/Result.png  | width=250
+)
+![Movie Card Detail](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/MovieDetail.png  | width=250)
 
 
 ## 6. Finished Product
-![No Show Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/noShowFinalProduct.jpeg)
-![Carrousel Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/carrouselFinalProduct.jpeg)
-![Movie Card Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/movieCardFinalProduct.jpeg)
-![Time Test Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/timeTestFinalProduct.jpeg)
-![Landing Page Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/landingPageFinalProduct.jpeg)
+![No Show Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/noShowFinalProduct.jpeg  | width=250
+)
+![Carrousel Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/carrouselFinalProduct.jpeg | width=250)
+![Movie Card Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/movieCardFinalProduct.jpeg | width=250)
+![Time Test Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/timeTestFinalProduct.jpeg | width=250)
+
 <br>
 
-![Gif Product 1](https://im4.ezgif.com/tmp/ezgif-4-da9014b398ae.gif)
-![Gif Product 2](https://im4.ezgif.com/tmp/ezgif-4-07d65065cc69.gif)
-![Gif Product 3](https://im4.ezgif.com/tmp/ezgif-4-234be0de26a4.gif)
+![Gif Product 1](https://im4.ezgif.com/tmp/ezgif-4-da9014b398ae.gif | width=250)
+![Gif Product 2](https://im4.ezgif.com/tmp/ezgif-4-07d65065cc69.gif | width=250)
+![Gif Product 3](https://im4.ezgif.com/tmp/ezgif-4-234be0de26a4.gif | width=250)
 
 ## 7. Authors
 * **Josseline Acosta** - [Github](https://github.com/JossAcosta)
