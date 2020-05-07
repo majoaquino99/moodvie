@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ca977dd4ae90e22b2ebd042af56141fc",
+    "revision": "372ca313448a962827b912b717000b2d",
     "url": "/moodvie/index.html"
   },
   {
-    "revision": "d482df9a04432f401c8f",
+    "revision": "cb9f39b38ca79452a064",
     "url": "/moodvie/static/css/main.dfa17c05.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/moodvie/static/js/2.5688c461.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d482df9a04432f401c8f",
-    "url": "/moodvie/static/js/main.d20d537f.chunk.js"
+    "revision": "cb9f39b38ca79452a064",
+    "url": "/moodvie/static/js/main.50370708.chunk.js"
   },
   {
     "revision": "8023c638031854f576c5",
