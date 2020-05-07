@@ -1,0 +1,40 @@
+@media only screen and (max-width: 600px) {
+    .Container {
+        background-color: var(--smalt-blue);
+        font-family: var(--font-poppins);
+        height: 100%;
+        color: white;
+    }   
+   
+   
+}
+
+ /* .landing {
+        font-family: var(--font-poppins);
+        background: var(--light-grey);
+        position: relative;
+        height: calc(100% - 45px);
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    h1 {
+        font-family: var(--font-oleo-script);
+    }
+    
+    h2 {
+        margin: 1rem 0;
+        color: var(--dark-blue);
+        font-weight: bold;
+        font-size: 1.25em;
+        text-align: center;
+    }
+    
+    .emojiSection{
+        color: var(--hokey-pokey);
+        z-index: 22;
+    } */
+    
+
+
+
+

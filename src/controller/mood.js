@@ -1,93 +1,70 @@
+const axios = require('axios');
+
 //MOODS
-const STRESSED= ['comedy', 'family', 'sport',];
-const JUST_CHILLING= ['comedy', 'animation', 'horror', 'musical', 'thriller'];
-const BOREDOM= ['action', 'adventure', 'crime', 'fantasy', 'mystery',];
-const LOW_MOOD= ['comedy', 'drama', 'romance', ];
-const INSOMIA= ['biography', 'documentary', 'history', 'music', 'news', 'war'];
+const moodList = {STRESSED: ['comedy', 'family', 'sport',],
+ JUST_CHILLING: ['comedy', 'animation', 'horror', 'musical', 'thriller'],
+ BOREDOM: ['action', 'adventure', 'crime', 'fantasy', 'mystery',],
+ LOW_MOOD: ['comedy', 'drama', 'romance', ],
+ INSOMIA: ['biography', 'documentary', 'history', 'music', 'news', 'war']};
 //Other Constants
 const BASE_API = 'https://yts.mx/api/v2/list_movies.json';
 
-
-
-
 //Get results of the mood function
-    async function giveResultsByMood (mood, time, not) {
+ export default async function giveResults ({mood, time, blacklist}) {
 
-        //Get data function
-        async function getData(url){
-          const response = await fetch(url)
-          const data = await response.json()
-          return data;
-        }
+//  * 1. Fetch all the data list
 
-        // 1ro. Agarrar el array de géneros seleccionado por el MOOD
-        // 2do. Eliminar el genero NOT_SHOW del array de generos agarrados
+async function getData(url){
+    const {data} = await axios.get(url)
+    return data;
+}
 
-        const deleteGenre = (array, element) => {
-            let resultGenreArray =[];
-            for(let k=0; k<array.length; k++){
-                if(array[k] !== element){
-                    resultGenreArray.push(array[k])
-                    console.log(resultGenreArray);
-                }
-            }
-            return resultGenreArray;
-        }
+const newMoodGenreArray = moodList[mood].filter(m => blacklist !== m);
 
-        const newMoodGenreArray = deleteGenre(mood, not); // se corre la función con los parametros 1 y 3
-        
-        
-        // 3ro. Hacer un randomize de los géneros que quedan
-        const randomNumberMood = Math.floor((Math.random() * newMoodGenreArray.length - 1 ) + 1  );
-        const randomGenreMood= newMoodGenreArray[randomNumberMood];
-        console.log('random Genre Mood' , randomGenreMood); 
-        
-        // 4to. Obtener datos de las APIs del género random que salió
+const randomNumberMood = Math.floor((Math.random() * newMoodGenreArray.length - 1 ) + 1  );
+const randomGenreMood= newMoodGenreArray[randomNumberMood];
+console.log('random Genre Mood' , randomGenreMood);
 
-        const dataForMood = await getData(`${BASE_API}?genre=${randomGenreMood}&sort_by=rating`);
-        const movieDataForMood =dataForMood.data.movies;
-         
-        const idForMood = movieDataForMood.map(singleMovie =>{
-            return singleMovie.imdb_code;
-        });
-          
-        idForMood.map(async (id) => {
-          const API_KEY = 'ea0e8d2f';
-          const infoMoviesForMood = await getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
-            
-          // 5to. Filtrar por el runtime seleccionado
-          // 6to. Mostrar/Return información en objeto 
-    
-          let runtimeStr = infoMoviesForMood.Runtime;
-          let runtimeNumber = parseInt(runtimeStr, 10) 
+//  * 2. Fetch all the details from items
 
-          if(runtimeNumber <= time){
-                 
-              const resultDataMood ={
-                    title: infoMoviesForMood.Title,
-                    imgURL: infoMoviesForMood.Poster,
-                    year: infoMoviesForMood.Year,
-                    runtime: infoMoviesForMood.Runtime,
-                    genre: infoMoviesForMood.Genre,
-                    summary:infoMoviesForMood.Plot,
-                    director: infoMoviesForMood.Director,
-                    writer: infoMoviesForMood.Writer,
-                    actors : infoMoviesForMood.Actors,
-                    language : infoMoviesForMood.Language,
-                    country: infoMoviesForMood.Country,
-                    imdbRating: infoMoviesForMood.imdbRating,
-                    type: infoMoviesForMood.Type,
-                }
+const {data: { movies }} = await getData(`${BASE_API}?genre=${randomGenreMood}&sort_by=rating`);
 
-                console.log(resultDataMood)
-                return infoMoviesForMood;
-                return resultDataMood;   
-                }
-        });
-    }
+const detailPromises = movies.map(async ({imdb_code: id}) => {
+    const API_KEY = 'ea0e8d2f';
+    return getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
+});
 
 
+const moviesData = await Promise.all(detailPromises);
 
-//correr función con parametros mock
+//  * 3. Filter
+const filteredMovies = moviesData.filter(({Runtime: RuntimeStr})=>{
+    const runtime = parseInt(RuntimeStr, 10);
+    return runtime <= time;
+});
 
-    giveResultsByMood(JUST_CHILLING, 300, 'animation');
+//  * 4. Transform
+//  * 5. Return
+return filteredMovies.map(movie=>({
+    title: movie.Title,
+    imgURL: movie.Poster,
+    year: movie.Year,
+    runtime: movie.Runtime,
+    genre: movie.Genre,
+    summary:movie.Plot,
+    director: movie.Director,
+    writer: movie.Writer,
+    actors : movie.Actors,
+    language : movie.Language,
+    country: movie.Country,
+    imdbRating: movie.imdbRating,
+	type: movie.Type,
+}));
+};
+/*
+giveResults(JUST_CHILLING, 300, 'animation')
+.then(console.log)
+.catch(err=>{console.log(err.stack)});
+
+*/
+
