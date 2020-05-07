@@ -11,9 +11,8 @@ import { Container } from '@material-ui/core';
 import { yellow } from '@material-ui/core/colors';
 import mockImage from '../../assets/mocking.jpg'
 
-const DetailCard =  (props)  => {
-    console.log(props)
-
+const DetailCard =  ({movieData, closeModal})  => {
+	console.log(movieData);
     const classes = useStyles();
     const [showOverview, setShowOverwiew] = useState(true);
 
@@ -27,7 +26,8 @@ const DetailCard =  (props)  => {
                 />
                 <CardHeader
                 title="Moonrise Kingdom"
-                subheader="Comedy,Drama | (2012) | 94min."
+				subheader={`${movieData.genres} | ${movieData.year} | ${movieData.runtime}`}
+				// "Comedy,Drama | (2012) | 94min."
                 />
                 <CardContent>
                 <CardActions className={classes.buttons}>
@@ -65,7 +65,13 @@ const DetailCard =  (props)  => {
                     <Button size="small" color="secondary" variant="outlined" className={classes.addList}>
                     ADD TO MY LIST
                     </Button>
-                    <Button size="small" color="secondary" variant="outlined" className={classes.addList}>
+					<Button
+						size="small"
+						color="secondary"
+						variant="outlined"
+						className={classes.addList}
+						onClick={closeModal}
+					>
                     GO BACK
                     </Button>
                 </CardActions>

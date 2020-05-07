@@ -21,7 +21,7 @@ function Slider({data, width, height}) {
 		const { title, imgURL } = element;
 
 		return (
-			<div key={element.id} className={styles.carouselTile} style={{'width': width, 'height': height}}>
+			<div key={element.title} className={styles.carouselTile} style={{'width': width, 'height': height}}>
 				<img className={styles.img} src={imgURL} onClick={() => { openModal(element)}} />
 			</div>
 		);
@@ -32,8 +32,8 @@ function Slider({data, width, height}) {
 				{content}
 			</div>
 			{isModalOpen && (
-				<div className={styles.overlay} onClick={()=>{setIsModalOpen(false)}}>
-					<DetailCard movieData={movieData}/>
+				<div className={styles.overlay}>
+					<DetailCard movieData={movieData} closeModal={closeModal} />
 				</div >
 			)}
 		</main>

@@ -7,8 +7,6 @@ import logo from '../../assets/images/logo.svg';
 import home from '../../assets/icons/home.svg';
 import Slider from '../Slider';
 
-import { mockData } from './mockDataInSlider';
-
 function ResultsContainer({testResults}) {
 	// Here goes the function to retrive data
 
@@ -17,7 +15,7 @@ function ResultsContainer({testResults}) {
 			<header>
 				<img className={styles.logo} src={logo} />
 			</header>
-			<Slider data={mockData} width='280px' height='420px'/>
+			<Slider data={testResults} width='280px' height='420px'/>
 			<footer>
 				<Link to="/"> <img className={styles.home} src={home} /></Link>
 			</footer>

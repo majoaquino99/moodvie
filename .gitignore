@@ -24,5 +24,4 @@ yarn-error.log*
 
 
 # Temp
-src/components/Results/mockDataInSlider.js
 trash/
