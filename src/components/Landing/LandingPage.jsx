@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 
-import giveResultsByMood from '../../controller/mood';
+import randomSelected from '../../controller/randomSelected';
 import Slider from '../Slider/SliderContainer';
 
 import styles from './Landing.module.css';
 import Header from './HeaderComponent';
 import MoodTest from './MoodTest';
 import TimeTest from './TimeTest';
-import NoShow from './NoShowTest'
-
-import {mockData} from './mockDataInSlider';
+import NoShow from './NoShowTest';
 
 const Landing = () => {
 	// const { value, setValue } = useContext(ConfContext)
 	// TODO: Using a new state to trigger the data fetching after when the quiz has ended
 	const [testEnded, setTestEnded] = useState(false);
-	// TODO: Renaming object properties to match back-end format {mood, time, not}
+	// TODO: Renaming object properties to match back-end format {mood, time, blacklist}
     const [value, setValue] = useState({
         mood: '',
         time: '',
-        not: '',
+        blacklist: '',
     });
 	const [view, setView] = useState(0);
 	const [testResult, setTestResult] = useState({});
 	const [sliderData, setSliderData] = useState(0);
-	console.log(sliderData)
 	let history = useHistory();
 
     const selectedAnswerOne = (event) => {
@@ -52,7 +49,7 @@ const Landing = () => {
         const selectedValue = event.currentTarget.value;
         setValue({
             ...value,
-            not: selectedValue,
+            blacklist: selectedValue,
 		});
 		setTestEnded(true);
 
@@ -66,17 +63,17 @@ const Landing = () => {
 
 	useEffect(() => {
 		if(testEnded) {
-			giveResultsByMood(value).then( (response) => {
+			history.push({
+				pathname: '/result',
+				state: { value }
+			});
+		} else {
+			randomSelected().then( (response) => {
 				console.log(response);
-				//sending data
-				history.push("/result");
+				setSliderData(response);
 			}).catch((error) => {
 				console.error(error);
 			});
-		} else {
-			//loading data from random
-			const data = mockData // aqui va la funcion
-			setSliderData(data);
 		}
 	}, [testEnded]);
 

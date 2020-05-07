@@ -1,36 +1,39 @@
+const axios = require('axios');
 //Search by Name Function
 async function searchTitleMovie(searchTitle){
 
-  //Get data function
-  async function getData(url){
-  const response = await fetch(url)
-  const data = await response.json()
-  return data;
-  }
+//  * 1. Fetch all the data list
 
+async function getData(url){
+  const {data} = await axios.get(url)
+  return data;
+}
 
 
 const API_KEY = 'ea0e8d2f';
 const infoMoviesByGenreSearch = await getData(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTitle}`);
+
 const resultData = infoMoviesByGenreSearch.Search;
-const resultDataObj = resultData.map( infoMoviesByGenre =>{
+const resultDataObj = resultData.map( movie =>{
     return {
-        title: infoMoviesByGenre.Title,
-        imgURL: infoMoviesByGenre.Poster,
-        year: infoMoviesByGenre.Year,
-        runtime: infoMoviesByGenre.Runtime,
-        genre: infoMoviesByGenre.Genre,
-        summary:infoMoviesByGenre.Plot,
-        director: infoMoviesByGenre.Director,
-        writer: infoMoviesByGenre.Writer,
-        actors : infoMoviesByGenre.Actors,
-        language : infoMoviesByGenre.Language,
-        country: infoMoviesByGenre.Country,
-        imdbRating: infoMoviesByGenre.imdbRating,
-        type: infoMoviesByGenre.Type,
+        title: movie.Title,
+        imgURL: movie.Poster,
+        year: movie.Year,
+        runtime: movie.Runtime,
+        genre: movie.Genre,
+        summary:movie.Plot,
+        director: movie.Director,
+        writer: movie.Writer,
+        actors : movie.Actors,
+        language : movie.Language,
+        country: movie.Country,
+        imdbRating: movie.imdbRating,
+        type: movie.Type,
        }
    })
-console.log(resultDataObj);
-}
+   return resultDataObj;
+};
 
-searchTitleMovie('super');  //3. User search by title
+searchTitleMovie('super')
+.then(console.log)
+.catch(err=>console.log(err));  //3. User search by title
