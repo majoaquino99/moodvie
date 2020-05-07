@@ -2,23 +2,26 @@
 
 ## Table of Contents
 * [1. Introduction](#1-introduction)
-<!-- gio -->
-This will be the introduction
 * [2. Overview (key features)](#2-overview)
-<!-- gio -->
 * [3. Motivation](#3-motivation)
 * [4. User Stories](#4-user-stories)
 * [5. Prototypes](#5-prototypes)
 * [6. Finished Product](#6-finished-product)
 * [7. Authors](#7-authors)
+* [8. Aknowledgments](#8-aknowledgments)
 
 
 
 ## 1. Introduction
-##What am I going to watch? :film_strip:
+## What am I going to watch? :film_strip:
+![Logo](src\assets\icons\logo.svg)
 You're on a bad mood. You're stressed from work or school. You **just want to watch something**, but spending more time choosing a movie than actually watching it doesn´t sound like a great idea, right? And, what if it sucks? Yeez, that just gets you in a worse mood. But not anymore with *moodvie* It won't only pick random movies out of great ratings for you, but it will also generate a movie based on how much time you've got, what type of mood are you in, and what type of move you **definetely** don't want to watch.  In other words *you need to* use this app.
 
 ## 2. Overview
+
+* With this app you can visualize a random suggestion of a movie for you to watch.
+* With this app you can get a personalized suggestion based on your mood, time and preferences.
+* With this app you can see detailed info about a specific movie.
 
 ## 3. Motivation
 In times as this, isolated at home, with all of this feelings happening inside, we thought it would be a good idea to create a platform to select a movie based on your feelings. #stayathome, and stay healthy.
@@ -63,9 +66,9 @@ As a user, I want to receive a random suggestion of a movie directly and easy, s
 * **Ary MF** - [Github](https://github.com/AryMF)
 * **Ana Paula Oliva** - [Github](https://github.com/anapaulaoliva)
 * **María Jose Aquino** - [Github](https://github.com/majoaquino99)
-* [8. Aknowledgments](#8-aknowledgments)
+
+## 8. Aknowledments
 
 We'd like to acknowledge - [Laboratoria](https://github.com/Laboratoria) for accompanying us through this 6 months of extreme learning and dedication. 
 
-## 8. Aknowledments
 
