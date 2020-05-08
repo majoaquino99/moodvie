@@ -14,7 +14,9 @@
 
 ## 1. Introduction
 ## What am I going to watch? :film_strip:
-![Logo](https://raw.githubusercontent.com/majoaquino99/moodvie/65696c829baa8879045b45ebd41e9ff612e51597/src/assets/icons/logo.svg)
+![Logo](https://raw.githubusercontent.com/majoaquino99/moodvie/65696c829baa8879045b45ebd41e9ff612e51597/src/assets/icons/logo.svg)  <br>
+  
+
 You're on a bad mood. You're stressed from work or school. You **just want to watch something**, but spending more time choosing a movie than actually watching it doesn´t sound like a great idea, right? And, what if it sucks? Yeez, that just gets you in a worse mood. But not anymore with *moodvie* It won't only pick random movies out of great ratings for you, but it will also generate a movie based on how much time you've got, what type of mood are you in, and what type of move you **definetely** don't want to watch.  In other words *you need to* use this app.
 
 ## 2. Overview
@@ -57,8 +59,25 @@ As a user, I want to receive a random suggestion of a movie directly and easy, s
 
 
 ## 5. Prototypes
+* **Landing page**
+![Landing Page](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/home.png )
+![Question 01](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/QuestionScreen01.png)
+![Question 02](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/QuestionScreen02.png)
+![Results Page](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/Result.png)
+![Movie Card Detail](https://github.com/majoaquino99/moodvie/blob/master/src/assets/images/MovieDetail.png )
+
 
 ## 6. Finished Product
+![No Show Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/noShowFinalProduct.jpeg )
+![Carrousel Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/carrouselFinalProduct.jpeg)
+![Movie Card Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/movieCardFinalProduct.jpeg)
+![Time Test Final Product](https://raw.githubusercontent.com/majoaquino99/moodvie/master/src/assets/images/timeTestFinalProduct.jpeg)
+
+<br>
+
+![Gif Product 1](https://im4.ezgif.com/tmp/ezgif-4-da9014b398ae.gif)
+![Gif Product 2](https://im4.ezgif.com/tmp/ezgif-4-07d65065cc69.gif)
+![Gif Product 3](https://im4.ezgif.com/tmp/ezgif-4-234be0de26a4.gif)
 
 ## 7. Authors
 * **Josseline Acosta** - [Github](https://github.com/JossAcosta)
