@@ -23,7 +23,6 @@ const newMoodGenreArray = moodList[mood].filter(m => blacklist !== m);
 
 const randomNumberMood = Math.floor((Math.random() * newMoodGenreArray.length - 1 ) + 1  );
 const randomGenreMood= newMoodGenreArray[randomNumberMood];
-console.log('random Genre Mood' , randomGenreMood);
 
 //  * 2. Fetch all the details from items
 
@@ -31,7 +30,7 @@ const {data: { movies }} = await getData(`${BASE_API}?genre=${randomGenreMood}&s
 
 const detailPromises = movies.map(async ({imdb_code: id}) => {
     const API_KEY = 'ea0e8d2f';
-    return getData(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
+    return getData(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
 });
 
 
@@ -61,9 +60,3 @@ return filteredMovies.map(movie=>({
 	type: movie.Type,
 }));
 };
-/*
-giveResults(JUST_CHILLING, 300, 'animation')
-.then(console.log)
-.catch(err=>{console.log(err.stack)});
-
-*/
